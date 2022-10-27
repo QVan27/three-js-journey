@@ -40,7 +40,7 @@ loadingManager.onError = () => {
 const textureLoader = new THREE.TextureLoader(loadingManager);
 
 const colorTexture = textureLoader.load(
-  "/textures/door/color.jpg",
+  "/textures/minecraft.png",
   () => {
     console.log("texture loaded");
   },
@@ -70,9 +70,13 @@ const roughnessTexture = textureLoader.load("/textures/door/roughness.jpg");
 // colorTexture.offset.x = 0.5;
 // colorTexture.offset.y = 0.5;
 
-colorTexture.rotation = Math.PI / 4;
-colorTexture.center.x = 0.5
-colorTexture.center.y = 0.5
+// colorTexture.rotation = Math.PI / 4;
+// colorTexture.center.x = 0.5
+// colorTexture.center.y = 0.5
+
+colorTexture.generateMipmaps = false;
+colorTexture.minFilter = THREE.NearestFilter
+colorTexture.magFilter = THREE.NearestFilter
 
 /**
  * Base
